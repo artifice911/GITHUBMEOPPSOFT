@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MEOPP ART Mutual Pausa Activa</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+  </head>
+
+  <body id="pantalla">
+    <!------------SECCION MODAL--------->
+    <section id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="adentro text-center">
+        TOCA LA PANTALLA
+      </div>
+    </section>
+
+    <!------------SECCION INTRO--------->
+    <section id="intro" class="screen">
+      <div class="pantalla d-flex align-content-center justify-content-center">
+        <img class="logo" src="images/meopplogo.png" alt="logo meopp" />
+      </div>
+      <div class="d-flex align-content-center justify-content-center">
+        <button class="button-cta" role="button" onclick="mostrarLogin()">
+          Entrar
+        </button>
+      </div>
+      <audio src="audio/meopper/bienvenida.mp3" id="saludo"></audio>
+    </section>
+
+    <!----------SECCION LOGIN USUARIO--->
+    <section id="login" class="screen">
+      <div class="d-flex flex-column align-content-center mb-3">
+        <h3 class="text-center mb-3" id="loginInfo">INGRESE SU DNI</h3>
+        <h1
+          id="consola"
+          class="text-center bg-white rounded w-25 align-self-center"
+        ></h1>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <button
+          class="button-login"
+          role="button"
+          onclick="agregarNum(this)"
+          id="1"
+        >
+          1
+        </button>
+        <button
+          class="button-login"
+          role="button"
+          onclick="agregarNum(this)"
+          id="2"
+        >
+          2
+        </button>
+        <button
+          class="button-login"
+          role="button"
+          onclick="agregarNum(this)"
+          id="3"
+        >
+          3
+        </button>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button
+          class="button-login"
+          role="button"
+          onclick="agregarNum(this)"
+          id="4"
+        >
+          4
+        </button>
+        <button
+          class="button-login"
+          role="button"
+          onclick="agregarNum(this)"
+          id="5"
+        >
+          5
+        </button>
+        <button
+          class="button-login"
+          role="button"
+          onclick="agregarNum(this)"
+          id="6"
+        >
+          6
+        </button>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button
+          class="button-login"
+          role="button"
+          onclick="agregarNum(this)"
+          id="7"
+        >
+          7
+        </button>
+        <button
+          class="button-login"
+          role="button"
+          onclick="agregarNum(this)"
+          id="8"
+        >
+          8
+        </button>
+        <button
+          class="button-login"
+          role="button"
+          onclick="agregarNum(this)"
+          id="9"
+        >
+          9
+        </button>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button
+          class="button-login"
+          role="button"
+          onclick="agregarNum(this)"
+          id="0"
+        >
+          0
+        </button>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button
+          class="button-delete"
+          role="button"
+          onclick="borrarNum()"
+          id="borrar"
+        >
+          Borrar
+        </button>
+        <button
+          class="button-cta"
+          role="button"
+          onclick="verificarDatos()"
+          id="ingresar"
+        >
+          Ingresar
+        </button>
+      </div>
+      <div class="d-flex justify-content-between">
+        <button
+          class="button-34"
+          role="button"
+          onclick="volverIntro()"
+          id="volverIntro"
+        >
+          Volver
+        </button>
+        <button class="button-34" role="button" onclick="accesoInvitado()">
+          Ejercitar
+        </button>
+      </div>
+    </section>
+
+    <!----------SECCION PAUSAS ACTIVAS VIDEO--->
+    <section
+      id="pausasActivas"
+      class="flex-column align-content-center text-center"
+    >
+      PAUSAS ACTIVAS VIDEO
+      <button
+        class="button-34 align-self-center mt-3"
+        role="button"
+        onclick="mostrarPrecalentamiento()"
+        id="saltar"
+      >
+        Saltar
+      </button>
+    </section>
+
+    <!----------SECCION CALENTAMIENTO----------->
+    <section
+      id="calentamiento"
+      class="flex-column align-content-center text-center"
+    >
+      PRECALENTAMIENTO
+      <button
+        class="button-34 align-self-center mt-3"
+        role="button"
+        onclick="mostrarMain()"
+        id="listoPre"
+      >
+        Listo
+      </button>
+    </section>
+
+    <!----------SECCION MAIN------------------->
+    <section
+      id="main"
+      class="screen text-center flex-column align-content-center justify-content-center"
+    >
+      <div class="barraNav align-content-center mt-1">
+        <div class="content fs-4 mt-3" id="puntos">Puntos:</div>
+        <div class="content fs-4 mt-3" id="nombre">Nombre:</div>
+        <div class="content fs-4 mt-3" id="empresa">Empresa:</div>
+      </div>
+      <div class="d-flex justify-content-between mt-5">
+        <div class="d-flex flex-column align-content-center">
+          <img
+            src="images/inferior.png"
+            alt="m-inferior"
+            class="cards"
+            onclick="mostrarEjercicios(this)"
+            id="inferior"
+          />
+        </div>
+        <div class="d-flex flex-column align-content-center">
+          <img
+            src="images/visual.png"
+            alt="m-visuales"
+            class="cards"
+            onclick="mostrarEjercicios(this)"
+            id="visuales"
+          />
+        </div>
+        <div class="d-flex flex-column align-content-center">
+          <img
+            src="images/superior.png"
+            alt="m-superior"
+            class="cards"
+            onclick="mostrarEjercicios(this)"
+            id="superior"
+          />
+        </div>
+      </div>
+
+      <div id="adminBTNS">
+        <button class="button-34" role="button" onclick="upload()" id="cargar">
+          Cargar Data
+        </button>
+        <button
+          class="button-34"
+          role="button"
+          onclick="download()"
+          id="descargar"
+        >
+          Descargar Data
+        </button>
+      </div>
+      <div class="d-flex justify-content-center mt-3">
+        <button
+          class="button-34"
+          role="button"
+          onclick="volverLogin()"
+          id="volver"
+        >
+          Cerrar Sesion
+        </button>
+      </div>
+    </section>
+
+    <!----------SECCION EJERCICIOS-------------->
+    <section id="ejercicios" class="flex-column align-content-center">
+      <h1 id="categoria" class="text-center p-2 m-5 bg-white rounded"></h1>
+      <div class="d-flex justify-content-center">
+        <div id="einferiores">
+          <img
+            src="images/rodillas.png"
+            alt="rodilla y tobillo"
+            onclick="previaEjercicio(this)"
+            id="btnrodillas"
+            class="cards"
+          />
+        </div>
+        <div id="evisuales" class="cards">
+          <img
+            src="images/visual.png"
+            alt="vista"
+            onclick="previaEjercicio(this)"
+            id="btnvisuales"
+            class="cards"
+          />
+        </div>
+        <div id="esuperiores" class="cards">
+          <img
+            src="images/cuello.png"
+            alt="cuello"
+            onclick="previaEjercicio(this)"
+            id="btncervical"
+            class="cards"
+          />
+          <img
+            src="images/lumbar.png"
+            alt="lumbar"
+            onclick="previaEjercicio(this)"
+            id="btncolumna"
+            class="cards"
+          />
+          <img
+            src="images/hombros.png"
+            alt="hombros y muñecas"
+            onclick="previaEjercicio(this)"
+            id="btnhombros"
+            class="cards"
+          />
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-4">
+        <button
+          class="button-34"
+          role="button"
+          onclick="volverMain()"
+          id="volver"
+        >
+          Volver
+        </button>
+      </div>
+    </section>
+
+    <!----------SECCION PREVIA---------------->
+    <section id="previa" class="flex-column">
+      <h1 id="categoria" class="text-center p-2 m-5 bg-white rounded">
+        Elige un ejercicio para comenzar.
+      </h1>
+      <div class="d-flex w-100">
+        <div class="ejerciciosLista">
+          <div id="cuello" class="ms-5 flex-column justify-content-start">
+            <button
+              class="button-34 m-2"
+              role="button"
+              onclick="mostrarAct(this)"
+              id="cuello1"
+            >
+              Ejercicio 1
+            </button>
+            <button
+              class="button-34 m-2"
+              role="button"
+              onclick="mostrarAct(this)"
+              id="cuello2"
+            >
+              Ejercicio 2
+            </button>
+            <button
+              class="button-34 m-2"
+              role="button"
+              onclick="mostrarAct(this)"
+              id="cuello3"
+            >
+              Ejercicio 3
+            </button>
+          </div>
+          <div id="hombros" class="ms-5 flex-column justify-content-start">
+            <button
+              class="button-34 m-2"
+              role="button"
+              onclick="mostrarAct(this)"
+              id="hombros1"
+            >
+              Ejercicio 1
+            </button>
+            <button
+              class="button-34 m-2"
+              role="button"
+              onclick="mostrarAct(this)"
+              id="hombros2"
+            >
+              Ejercicio 2
+            </button>
+            <button
+              class="button-34 m-2"
+              role="button"
+              onclick="mostrarAct(this)"
+              id="hombros3"
+            >
+              Ejercicio 3
+            </button>
+            <button
+              class="button-34 m-2"
+              role="button"
+              onclick="mostrarAct(this)"
+              id="hombros4"
+            >
+              Ejercicio 4
+            </button>
+          </div>
+          <div id="lumbar" class="ms-5 flex-column justify-content-start">
+            <button
+              class="button-34 m-2"
+              role="button"
+              onclick="mostrarAct(this)"
+              id="lumbar1"
+            >
+              Ejercicio 1
+            </button>
+            <button
+              class="button-34 m-2"
+              role="button"
+              onclick="mostrarAct(this)"
+              id="lumbar2"
+            >
+              Ejercicio 2
+            </button>
+          </div>
+          <div id="rodilla" class="ms-5 flex-column justify-content-start">
+            <button
+              class="button-34 m-2"
+              role="button"
+              onclick="mostrarAct(this)"
+              id="rodilla1"
+            >
+              Ejercicio 1
+            </button>
+            <button
+              class="button-34 m-2"
+              role="button"
+              onclick="mostrarAct(this)"
+              id="rodilla2"
+            >
+              Ejercicio 2
+            </button>
+          </div>
+          <div id="visualE" class="ms-5 flex-column justify-content-start">
+            <button
+              class="button-34 m-2"
+              role="button"
+              onclick="mostrarAct(this)"
+              id="visual"
+            >
+              Ejercicio 1
+            </button>
+          </div>
+        </div>
+        <div class="ejerciciosVideo">
+          <img
+            src="images/ejercicios/default.png"
+            alt="ejercicioID"
+            id="ejercicioID"
+            class="cards"
+          />
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <button
+          class="button-34 ms-5"
+          role="button"
+          onclick="volverMain()"
+          id="volverbtn"
+        >
+          Volver
+        </button>
+        <div id="comenzarDiv">
+          <button
+            class="button-34 me-5"
+            role="button"
+            onclick="comenzarAct()"
+            id="comenzarAct"
+          >
+            Comenzar
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!----------SECCION PREPARACION DE EJERCICIOS-------->
+    <section
+      id="preparacion"
+      class="flex-column justify-content-center align-items-center"
+    >
+      <h1 class="text-center fs-3 mt-5 mb-5">
+        Colocate en el centro, vamos a comenzar!
+      </h1>
+      <h1 id="timer" class="reloj"></h1>
+    </section>
+
+    <!----------SECCION ACTIVIDAD------------------->
+    <section id="actividad" class="flex-column justify-content-center">
+      <div class="d-flex">
+        <div class="d-flex flex-column align-items-center w-25">
+          <h1 id="tiempoAct" class="timerGrande"></h1>
+          <h1
+            id="nombreEjercicio"
+            class="text-center p-2 m-5 bg-white rounded"
+          ></h1>
+        </div>
+        <div class="w-75">
+          <img
+            src="images/ejercicios/default.png"
+            alt="ejercicioActivo"
+            id="ejercicioActual"
+            class="cards"
+          />
+        </div>
+      </div>
+    </section>
+    <!----------SECCION CONCLUSION DE EJERCICIOS---------->
+    <section
+      id="conclusion"
+      class="flex-column justify-content-center align-items-center"
+    >
+    
+      <div
+        id="grilla"
+        class="w-100 flex-column justify-content-center align-items-center"
+      >
+        <h1 id="pregunta" class="text-center mt-5">
+          ¿Sentiste dolor o molestia durante este ejercicio?
+        </h1>
+        <div class="d-flex justify-content-center">
+          <button
+            class="button-34 m-3"
+            role="button"
+            onclick="dolorBTN(this)"
+            id="si"
+          >
+            SI
+          </button>
+          <button
+            class="button-34 m-3"
+            role="button"
+            onclick="dolorBTN(this)"
+            id="no"
+          >
+            NO
+          </button>
+        </div>
+        <img src="images/posesPausaActiva.png" alt="completadoACT" class="img-fluid p-5">
+      </div>
+
+      <div id="botones" class="w-100 flex-column">
+        <img src="images/posesPausaActiva.png" alt="completadoACT" class="img-fluid m-5">
+        <div class="d-flex justify-content-between m-5">
+          <button
+          class="button-34"
+          role="button"
+          onclick="comenzarAct()"
+          id="repetirbtnAct"
+        >
+          Repetir Ejercicio
+        </button>
+        <button
+          class="button-34"
+          role="button"
+          onclick="ejercicioCompletado()"
+          id="completadoAct"
+        >
+          Ejercicio Completado
+        </button>
+        </div>
+        
+        
+      </div>
+    </section>
+    <audio src="audio/ambientTecno.mp3" loop id="ambient"></audio>
+     <video
+      autoplay
+      loop
+      muted
+      src="videos/Fondointro.mp4"
+      style="position: absolute; right: 0; bottom: 0; z-index: -1"
+    >
+
+  </video>
+    <script src="js/js/bootstrap.min.js"></script>
+  </body>
+  <script>
+    let url = "datos.csv";
+    let info;
+    //CONOCER LA PANTALLA ACTIVA PARA RESETEAR EL SOFT SI NO HAY ACTIVIDAD DESPUES DE 4 MINUTOS
+    let pantallaActiva = "intro";
+
+    var timeoutInMiliseconds = 240000;
+    var timeoutId;
+
+    function startTimer() {
+      // window.setTimeout returns an Id that can be used to start and stop a timer
+      timeoutId = window.setTimeout(doInactive, timeoutInMiliseconds);
+    }
+
+    function resetTimer() {
+      window.clearTimeout(timeoutId);
+      startTimer();
+    }
+
+    function doInactive() {
+      console.log("reinicio de seguridad");
+      location.reload();
+      // does whatever you need it to actually do - probably signs them out or stops polling the server for info
+    }
+
+    //window.onload = setupTimers();
+
+    document.body.addEventListener("click", resetTimer);
+
+    //CHEQUEA SI EXISTE LA KEY USUARIOS EN EL LOCALSTORAGE
+    if (localStorage.key(0) == "usuarios") {
+      info = JSON.parse(localStorage.getItem("usuarios"));
+    }
+    //CREA LA KEY "USUARIOS" EN EL LOCALSTORAGE SI ES LA PRIMERA VEZ QUE INICIA EL PROGRAMA Y CARGA LA INFO DEL ARCHIVO CSV
+    else {
+      upload();
+    }
+
+    let calentamiento = false;
+    let usuario;
+    let actividad = "";
+    let dolor;
+
+    let tiempoIntro = 5;
+    let srcActual;
+
+    const timerEjercicios = [10, 15, 25];
+    let timerEjercicioActual;
+
+  mostrarModal();
+
+    //CARGAR LA DATA DEL ARCHIVO LOCAL CSV Y GUARDARLA EN EL LOCAL STORAGE
+    function upload() {
+      /* fetch(url)
+    .then((response) => response.text())
+    .then((data) => {
+      const lines = data.split("\n");
+      const headers = lines[0].split(",");
+      const result = [];
+      for (let i = 0; i < lines.length; i++) {
+        lines[i] = lines[i].replace("\r", "");
+      }
+      for (let i = 0; i < headers.length; i++) {
+        headers[i] = headers[i].replace("\r", "");
+      }
+      for (let i = 1; i < lines.length; i++) {
+        const obj = {};
+        const currentline = lines[i].split(",");
+
+        for (let j = 0; j < headers.length; j++) {
+          obj[headers[j]] = currentline[j];
+        }
+
+        result.push(obj);
+      }
+      let json = JSON.stringify(result);
+
+      localStorage.setItem("usuarios", json);
+
+      let infoT = JSON.parse(localStorage.getItem("usuarios"));
+
+      info = infoT;
+    })
+    .catch((error) => console.log(error));
+  console.log("carga ok"); */
+      let infoPura = [
+        {
+          dni: "37749206",
+          nombre: "FACUNDO",
+          apellido: "SANZANA",
+          edad: "30",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "35032481",
+          nombre: "NATALIA",
+          apellido: "MOLINA",
+          edad: "32",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "41050925",
+          nombre: "MARIA",
+          apellido: "PEREYRA",
+          edad: "28",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "31532829",
+          nombre: "ESTELA",
+          apellido: "CARRO",
+          edad: "38",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "35597349",
+          nombre: "MACARENA",
+          apellido: "BRUSAIN",
+          edad: "33",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "44311231",
+          nombre: "CAMILA",
+          apellido: "PEREYRA",
+          edad: "25",
+          empresa: "MEOPP",
+          puntos: 0,
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: 1,
+          dolorcuello3: "si",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: 1,
+          dolorvisual: "no",
+        },
+        {
+          dni: "38495363",
+          nombre: "FRANCO",
+          apellido: "VALENZUELA",
+          edad: "29",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "20292207",
+          nombre: "MARIA_CRISTINA",
+          apellido: "VECCHI",
+          edad: "40",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "35592461",
+          nombre: "EVELIN",
+          apellido: "PALMA",
+          edad: "33",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "26596944",
+          nombre: "MARINE",
+          apellido: "CAMPOY",
+          edad: "41",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "29235235",
+          nombre: "MARIA LOURDES",
+          apellido: "MELO",
+          edad: "38",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "35124036",
+          nombre: "NICOLAS",
+          apellido: "HEREDIA",
+          edad: "32",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "33618543",
+          nombre: "GONZALO",
+          apellido: "DE LA SIERRA",
+          edad: "34",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "26233206",
+          nombre: "VERONICA",
+          apellido: "GUYOT",
+          edad: "41",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "34798402",
+          nombre: "LILIANA",
+          apellido: "RODRIGUEZ",
+          edad: "33",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "27332490",
+          nombre: "CONSTANZA",
+          apellido: "RICCINTO",
+          edad: "42",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "33663607",
+          nombre: "TERESA",
+          apellido: "GARRIDO",
+          edad: "35",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+        {
+          dni: "24968692",
+          nombre: "ALEJANDRA",
+          apellido: "PETERSEN",
+          edad: "45",
+          empresa: "MEOPP",
+          puntos: "0",
+          cuello1: "0",
+          dolorcuello1: "0",
+          cuello2: "0",
+          dolorcuello2: "0",
+          cuello3: "0",
+          dolorcuello3: "0",
+          hombros1: "0",
+          dolorhombros1: "0",
+          hombros2: "0",
+          dolorhombros2: "0",
+          hombros3: "0",
+          dolorhombros3: "0",
+          hombros4: "0",
+          dolorhombros4: "0",
+          lumbar1: "0",
+          dolorlumbar1: "0",
+          lumbar2: "0",
+          dolorlumbar2: "0",
+          rodilla1: "0",
+          dolorrodilla1: "0",
+          rodilla2: "0",
+          dolorrodilla2: "0",
+          visual: "0",
+          dolorvisual: "0",
+        },
+      ];
+      info = infoPura;
+      let subir = JSON.stringify(infoPura);
+      localStorage.setItem("usuarios", subir);
+    }
+
+    //SETEAR PANTALLAS VISIBLES AL COMIENZO DEL SOFTWARE
+    const modalS= document.getElementById("myModal");
+    const introS = document.querySelectorAll("#intro");
+    const loginS = (document.getElementById("login").style.display = "none");
+    const pausaS = (document.getElementById("pausasActivas").style.display =
+      "none");
+    const calentamientoS = (document.getElementById(
+      "calentamiento"
+    ).style.display = "none");
+
+    const mainS = (document.getElementById("main").style.display = "none");
+    const ejercicioS = (document.getElementById("ejercicios").style.display =
+      "none");
+    const previaS = (document.getElementById("previa").style.display = "none");
+    const preparacionS = (document.getElementById("preparacion").style.display =
+      "none");
+
+    const actividadS = (document.getElementById("actividad").style.display =
+      "none");
+
+    const conclusionS = (document.getElementById("conclusion").style.display =
+      "none");
+
+    //--------CREACION DE CLASE USUARIO PRINCIPAL-----------
+    class Usuario {
+      constructor(
+        dni,
+        nombre,
+        apellido,
+        edad,
+        empresa,
+        puntos,
+        cuello1,
+        dolorcuello1,
+        cuello2,
+        dolorcuello2,
+        cuello3,
+        dolorcuello3,
+        hombros1,
+        dolorhombros1,
+        hombros2,
+        dolorhombros2,
+        hombros3,
+        dolorhombros3,
+        hombros4,
+        dolorhombros4,
+        lumbar1,
+        dolorlumbar1,
+        lumbar2,
+        dolorlumbar2,
+        rodilla1,
+        dolorrodilla1,
+        rodilla2,
+        dolorrodilla2,
+        visual,
+        dolorvisual
+      ) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.empresa = empresa;
+        this.puntos = puntos;
+        this.cuello1 = cuello1;
+        this.dolorcuello1 = dolorcuello1;
+        this.cuello2 = cuello2;
+        this.dolorcuello2 = dolorcuello2;
+        this.cuello3 = cuello3;
+        this.dolorcuello3 = dolorcuello3;
+        this.hombros1 = hombros1;
+        this.dolorhombros1 = dolorhombros1;
+        this.hombros2 = hombros2;
+        this.dolorhombros2 = dolorhombros2;
+        this.hombros3 = hombros3;
+        this.dolorhombros3 = dolorhombros3;
+        this.hombros4 = hombros4;
+        this.dolorhombros4 = dolorhombros4;
+        this.lumbar1 = lumbar1;
+        this.dolorlumbar1 = dolorlumbar1;
+        this.lumbar2 = lumbar2;
+        this.dolorlumbar2 = dolorlumbar2;
+        this.rodilla1 = rodilla1;
+        this.dolorrodilla1 = dolorrodilla1;
+        this.rodilla2 = rodilla2;
+        this.dolorrodilla2 = dolorrodilla2;
+        this.visual = visual;
+        this.dolorvisual = dolorvisual;
+      }
+    }
+
+    let clave;
+
+    let baseDatos;
+
+    function volverIntro() {
+      const infoContraseña = document.getElementById("loginInfo").innerHTML="INGRESE SU DNI";
+      const introS = (document.getElementById("intro").style.display = "flex");
+      const loginS = (document.getElementById("login").style.display = "none");
+      const dni = document.getElementById("consola");
+      dni.innerText = "";
+      pantallaActiva = "intro";
+    }
+
+    //--------FUNCIONES DE BOTONES--------------
+    function agregarNum(boton) {
+      sonidoTap()
+      const dni = document.getElementById("consola");
+      let str = dni.textContent;
+      if (str.length <= 7) {
+        var text = document.createTextNode(boton.id);
+        dni.appendChild(text);
+      }
+    }
+
+    function borrarNum() {
+      const infoContraseña = document.getElementById("loginInfo").innerHTML="INGRESE SU DNI";
+      sonidoTap()
+      const dni = document.getElementById("consola");
+      let str = dni.textContent;
+      if (str.length >= 1) {
+        str = str.substring(0, str.length - 1);
+        dni.innerText = str;
+      }
+    }
+
+    //LOGIN CON DNI Y CARGA DE DATOS DEL USUARIO LOGUEADO
+    function verificarDatos(clave) {
+      const infoContraseña = document.getElementById("loginInfo").innerHTML="INGRESE SU DNI";
+      const dni = document.getElementById("consola");
+      let str = dni.textContent;
+      if (str.length == 7 || str.length == 8) {
+        clave = str;
+        let contador = 0;
+        for (let i = 0; i < info.length; i++) {
+          contador++;
+          if (info[i].dni == parseInt(clave)) {
+            usuario = new Usuario(
+              info[i].dni,
+              info[i].nombre,
+              info[i].apellido,
+              info[i].edad,
+              info[i].empresa,
+              info[i].puntos,
+              info[i].cuello1,
+              info[i].dolorcuello1,
+              info[i].cuello2,
+              info[i].dolorcuello2,
+              info[i].cuello3,
+              info[i].dolorcuello3,
+              info[i].hombros1,
+              info[i].dolorhombros1,
+              info[i].hombros2,
+              info[i].dolorhombros2,
+              info[i].hombros3,
+              info[i].dolorhombros3,
+              info[i].hombros4,
+              info[i].dolorhombros4,
+              info[i].lumbar1,
+              info[i].dolorlumbar1,
+              info[i].lumbar2,
+              info[i].dolorlumbar2,
+              info[i].rodilla1,
+              info[i].dolorrodilla1,
+              info[i].rodilla2,
+              info[i].dolorrodilla2,
+              info[i].visual,
+              info[i].dolorvisual
+            );
+            console.log(usuario);
+            console.log("contraseña ok");
+            comenzarAudio();
+            mostrarPausas();
+            break;
+          } else if (contador == info.length) {
+            sonidoError();
+            const infoContraseña = document.getElementById("loginInfo").innerHTML="Contraseña Incorrecta";
+            console.log("constraseña incorrecta");
+          }
+        }
+      } else {
+        sonidoError();
+        //alert("verifica tus datos para poder ingresar");
+      }
+    }
+
+    function mostrarLogin() {
+      comenzarAudio();
+      datos();
+      const loginS = (document.getElementById("login").style.display = "flex");
+      const introS = (document.getElementById("intro").style.display = "none");
+      pantallaActiva = "login";
+    }
+
+    function volverLogin() {
+      const loginS = (document.getElementById("login").style.display = "flex");
+      const mainS = (document.getElementById("main").style.display = "none");
+      usuario = "";
+      pantallaActiva = "login";
+    }
+
+    function accesoInvitado() {
+      const infoContraseña = document.getElementById("loginInfo").innerHTML="INGRESE SU DNI";
+      usuario = new Usuario(
+        "",
+        "PRUEBA",
+        "DE EJERCICIOS",
+        "",
+        "MEOPP",
+        0,
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      );
+      mostrarPausas();
+    }
+
+    function mostrarPausas() {
+      pausaActiva();
+      const infoContraseña = document.getElementById("loginInfo").innerHTML="INGRESE SU DNI";
+      const dni = document.getElementById("consola");
+      dni.innerText = "";
+      const loginS = (document.getElementById("login").style.display = "none");
+      const pausaS = (document.getElementById("pausasActivas").style.display =
+        "flex");
+      pantallaActiva = "pausasActivas";
+    }
+
+    function mostrarPrecalentamiento() {
+      sonidoTap();
+      const pausaS = (document.getElementById("pausasActivas").style.display =
+        "none");
+      const calentamientoS = (document.getElementById(
+        "calentamiento"
+      ).style.display = "flex");
+      pantallaActiva = "precalentamiento";
+    }
+
+    function mostrarMain() {
+      sonidoTap();
+      seleccionaMain();
+      const infoContraseña = document.getElementById("loginInfo").innerHTML="INGRESE SU DNI";
+      pantallaActiva = "main";
+      const admin = (document.getElementById("adminBTNS").style.display =
+        "none");
+      const calentamientoS = (document.getElementById(
+        "calentamiento"
+      ).style.display = "none");
+      const pausaS = (document.getElementById("pausasActivas").style.display =
+        "none");
+      const mainS = (document.getElementById("main").style.display = "flex");
+      const loginS = (document.getElementById("login").style.display = "none");
+      const nombre = (document.getElementById("nombre").innerHTML =
+        usuario.nombre + " " + usuario.apellido);
+
+      const puntosPlus = (document.getElementById("puntos").innerText =
+        usuario.puntos);
+      const empresa = (document.getElementById("empresa").innerHTML =
+        usuario.empresa);
+
+      //SE LE DA PERMISO A NICO Y A GONZA PARA ACCEDER A LA CARGA Y DESCARGA DE DATOS NUEVOS
+      /* if (usuario.dni == "33618543" || usuario.dni == "35124036") {
+    const adminBTNS = (document.getElementById("adminBTNS").style.display =
+      "flex");
+  } */
+      console.log(usuario.dni);
+    }
+
+    function mostrarEjercicios(boton) {
+      sonidoTap();
+      pantallaActiva = "ejercicios";
+      const mainS = (document.getElementById("main").style.display = "none");
+      const ejercicioS = (document.getElementById("ejercicios").style.display =
+        "flex");
+      if (boton.id === "visuales") {
+        const visuales = (document.getElementById("categoria").innerText =
+          "visuales");
+        const evisuales = (document.getElementById("evisuales").style.display =
+          "flex");
+        const einferiores = (document.getElementById(
+          "einferiores"
+        ).style.display = "none");
+        const esuperiores = (document.getElementById(
+          "esuperiores"
+        ).style.display = "none");
+      } else if (boton.id === "inferior") {
+        const inferior = (document.getElementById("categoria").innerText =
+          "inferior");
+        const evisuales = (document.getElementById("evisuales").style.display =
+          "none");
+        const einferiores = (document.getElementById(
+          "einferiores"
+        ).style.display = "flex");
+        const esuperiores = (document.getElementById(
+          "esuperiores"
+        ).style.display = "none");
+      } else if (boton.id === "superior") {
+        const superior = (document.getElementById("categoria").innerText =
+          "superior");
+        const evisuales = (document.getElementById("evisuales").style.display =
+          "none");
+        const einferiores = (document.getElementById(
+          "einferiores"
+        ).style.display = "none");
+        const esuperiores = (document.getElementById(
+          "esuperiores"
+        ).style.display = "flex");
+      }
+    }
+
+    function volverMain() {
+      pantallaActiva = "main";
+      const mainS = (document.getElementById("main").style.display = "flex");
+      const loginS = (document.getElementById("ejercicios").style.display =
+        "none");
+      const previaS = (document.getElementById("previa").style.display =
+        "none");
+      const actividadS = (document.getElementById("actividad").style.display =
+        "none");
+      const conclusionS = (document.getElementById("conclusion").style.display =
+        "none");
+      let imagen = (document.getElementById("ejercicioID").src =
+        "../images/ejercicios/default.png");
+    }
+
+    function previaEjercicio(boton) {
+      sonidoTap();
+      pantallaActiva = "previa";
+      const ejerciciosS = (document.getElementById("ejercicios").style.display =
+        "none");
+      const previaS = (document.getElementById("previa").style.display =
+        "flex");
+      const cuelloS = (document.getElementById("cuello").style.display =
+        "none");
+      const hombroS = (document.getElementById("hombros").style.display =
+        "none");
+      const lumbarS = (document.getElementById("lumbar").style.display =
+        "none");
+      const rodillaS = (document.getElementById("rodilla").style.display =
+        "none");
+      const visualS = (document.getElementById("visualE").style.display =
+        "none");
+      const comenzarBTN = (document.getElementById(
+        "comenzarDiv"
+      ).style.display = "none");
+      switch (boton.id) {
+        case "btnrodillas":
+          const rodilla = (document.getElementById("rodilla").style.display =
+            "flex");
+          break;
+        case "btnvisuales":
+          const visual = (document.getElementById("visualE").style.display =
+            "flex");
+          break;
+        case "btncervical":
+          const cuello = (document.getElementById("cuello").style.display =
+            "flex");
+          break;
+        case "btncolumna":
+          const lumbar = (document.getElementById("lumbar").style.display =
+            "flex");
+          break;
+        case "btnhombros":
+          const hombro = (document.getElementById("hombros").style.display =
+            "flex");
+          break;
+      }
+    }
+
+    function mostrarAct(boton) {
+      sonidoTap();
+      let imagen;
+      switch (boton.id) {
+        case "cuello1":
+          actividad = boton.id;
+          dolor = "dolor" + actividad;
+          imagen = document.getElementById("ejercicioID").src =
+            "../images/ejercicios/cuello1.png";
+          srcActual = "../images/ejercicios/cuello1.png";
+          break;
+        case "cuello2":
+          actividad = boton.id;
+          dolor = "dolor" + actividad;
+          imagen = document.getElementById("ejercicioID").src =
+            "../images/ejercicios/cuello2.png";
+          srcActual = "../images/ejercicios/cuello2.png";
+          break;
+        case "cuello3":
+          actividad = boton.id;
+          dolor = "dolor" + actividad;
+          imagen = document.getElementById("ejercicioID").src =
+            "../images/ejercicios/cuello3.png";
+          srcActual = "../images/ejercicios/cuello3.png";
+          break;
+        case "hombros1":
+          actividad = boton.id;
+          dolor = "dolor" + actividad;
+          imagen = document.getElementById("ejercicioID").src =
+            "../images/ejercicios/hombros1.png";
+          srcActual = "../images/ejercicios/hombros1.png";
+          break;
+        case "hombros2":
+          actividad = boton.id;
+          dolor = "dolor" + actividad;
+          imagen = document.getElementById("ejercicioID").src =
+            "../images/ejercicios/hombros2.png";
+          srcActual = "../images/ejercicios/hombros2.png";
+          break;
+        case "hombros3":
+          actividad = boton.id;
+          dolor = "dolor" + actividad;
+          imagen = document.getElementById("ejercicioID").src =
+            "../images/ejercicios/hombros3.png";
+          srcActual = "../images/ejercicios/hombros3.png";
+          break;
+        case "hombros4":
+          actividad = boton.id;
+          dolor = "dolor" + actividad;
+          imagen = document.getElementById("ejercicioID").src =
+            "../images/ejercicios/hombros4.png";
+          srcActual = "../images/ejercicios/hombros4.png";
+          break;
+        case "lumbar1":
+          actividad = boton.id;
+          dolor = "dolor" + actividad;
+          imagen = document.getElementById("ejercicioID").src =
+            "../images/ejercicios/lumbar1.png";
+          srcActual = "../images/ejercicios/lumbar1.png";
+          break;
+        case "lumbar2":
+          actividad = boton.id;
+          dolor = "dolor" + actividad;
+          imagen = document.getElementById("ejercicioID").src =
+            "../images/ejercicios/lumbar2.png";
+          srcActual = "../images/ejercicios/lumbar2.png";
+          break;
+        case "rodilla1":
+          actividad = boton.id;
+          dolor = "dolor" + actividad;
+          imagen = document.getElementById("ejercicioID").src =
+            "../images/ejercicios/rodilla1.png";
+          srcActual = "../images/ejercicios/rodilla1.png";
+          break;
+        case "rodilla2":
+          actividad = boton.id;
+          dolor = "dolor" + actividad;
+          imagen = document.getElementById("ejercicioID").src =
+            "../images/ejercicios/rodilla2.png";
+          srcActual = "../images/ejercicios/rodilla2.png";
+          break;
+        case "visual":
+          actividad = boton.id;
+          dolor = "dolor" + actividad;
+          imagen = document.getElementById("ejercicioID").src =
+            "../images/ejercicios/visual.png";
+          srcActual = "../images/ejercicios/visual.png";
+          break;
+        default:
+          break;
+      }
+      const comenzarBTN = (document.getElementById(
+        "comenzarDiv"
+      ).style.display = "flex");
+    }
+
+    function comenzarAct() {
+      comenzarAudio();
+      pantallaActiva = "preparacion";
+      const previaS = (document.getElementById("previa").style.display =
+        "none");
+      const conclusionS = (document.getElementById("conclusion").style.display =
+        "none");
+      const preparacionS = (document.getElementById(
+        "preparacion"
+      ).style.display = "flex");
+
+      tiempoIntro = 5;
+      let imagen = (document.getElementById("ejercicioID").src =
+        "../images/ejercicios/default.png");
+      timer();
+    }
+
+    function timer() {
+      let tempo;
+      let relojito = document.getElementById("timer");
+      if (tiempoIntro > 0) {
+        relojito.innerHTML = tiempoIntro--;
+        tempo = setTimeout(timer, 1000);
+      } else {
+        relojito.innerHTML = tiempoIntro;
+        comenzarEjercicio();
+        clearTimeout(tempo);
+      }
+    }
+
+    function comenzarEjercicio() {
+      pantallaActiva = "actividad";
+      const preparacionS = (document.getElementById(
+        "preparacion"
+      ).style.display = "none");
+      const actividadS = (document.getElementById("actividad").style.display =
+        "flex");
+      const nombreEjercicio = (document.getElementById(
+        "nombreEjercicio"
+      ).innerHTML = actividad);
+      let titulo;
+      switch (actividad) {
+        case "cuello1":
+          titulo = document.getElementById("nombreEjercicio").innerHTML =
+            actividad;
+          break;
+        case "cuello2":
+          titulo = document.getElementById("nombreEjercicio").innerHTML =
+            actividad;
+          break;
+        case "cuello3":
+          titulo = document.getElementById("nombreEjercicio").innerHTML =
+            actividad;
+          break;
+        case "hombros1":
+          titulo = document.getElementById("nombreEjercicio").innerHTML =
+            actividad;
+          break;
+        case "hombros2":
+          titulo = document.getElementById("nombreEjercicio").innerHTML =
+            actividad;
+          break;
+        case "hombros3":
+          titulo = document.getElementById("nombreEjercicio").innerHTML =
+            actividad;
+          break;
+        case "hombros4":
+          titulo = document.getElementById("nombreEjercicio").innerHTML =
+            actividad;
+          break;
+        case "lumbar1":
+          titulo = document.getElementById("nombreEjercicio").innerHTML =
+            actividad;
+          break;
+        case "lumbar2":
+          titulo = document.getElementById("nombreEjercicio").innerHTML =
+            actividad;
+          break;
+        case "rodilla1":
+          titulo = document.getElementById("nombreEjercicio").innerHTML =
+            actividad;
+          break;
+        case "rodilla2":
+          titulo = document.getElementById("nombreEjercicio").innerHTML =
+            actividad;
+          break;
+        case "visual":
+          titulo = document.getElementById("nombreEjercicio").innerHTML =
+            actividad;
+          break;
+        case "":
+          alert("ELIGE UNA ACTIVIDAD PARA COMENZAR");
+          break;
+        default:
+          break;
+      }
+
+      const ejercicioActual = (document.getElementById("ejercicioActual").src =
+        srcActual);
+      let temporizador = new TiempoEjercicio("tiempoAct", 3, -1);
+      temporizador.conteoSegundos();
+    }
+
+    class TiempoEjercicio {
+      constructor(id, inicio, final) {
+        this.id = id;
+        this.inicio = inicio;
+        this.final = final;
+        this.contador = this.inicio;
+
+        this.conteoSegundos = function () {
+          if (this.contador == this.final) {
+            this.conteoSegundos = null;
+            conclusionAct();
+            return;
+          }
+          document.getElementById("tiempoAct").innerHTML = this.contador--;
+          setTimeout(this.conteoSegundos.bind(this), 1000);
+        };
+      }
+    }
+
+    function conclusionAct() {
+      lolograste();
+      pantallaActiva = "conclusion";
+      const actividadS = (document.getElementById("actividad").style.display =
+        "none");
+      const grillaS = (document.getElementById("grilla").style.display =
+        "flex");
+      const conclusionS = (document.getElementById("conclusion").style.display =
+        "flex");
+      const botoneS = (document.getElementById("botones").style.display =
+        "none");
+    }
+
+    function dolorBTN(boton) {
+      switch (dolor) {
+        case "dolorcuello1":
+          usuario.dolorcuello1 = boton.id;
+          break;
+        case "dolorcuello2":
+          usuario.dolorcuello2 = boton.id;
+          break;
+        case "dolorcuello3":
+          usuario.dolorcuello3 = boton.id;
+          break;
+        case "dolorhombros1":
+          usuario.dolorhombros1 = boton.id;
+          break;
+        case "dolorhombros2":
+          usuario.dolorhombros2 = boton.id;
+          break;
+        case "dolorhombros3":
+          usuario.dolorhombros3 = boton.id;
+          break;
+        case "dolorhombros4":
+          usuario.dolorhombros4 = boton.id;
+          break;
+        case "dolorlumbar1":
+          usuario.dolorlumbar1 = boton.id;
+          break;
+        case "dolorlumbar2":
+          usuario.dolorlumbar2 = boton.id;
+          break;
+        case "dolorrodilla1":
+          usuario.dolorrodilla1 = boton.id;
+          break;
+        case "dolorrodilla2":
+          usuario.dolorrodilla2 = boton.id;
+          break;
+        case "dolorvisual":
+          usuario.dolorvisual = boton.id;
+          break;
+
+        default:
+          break;
+      }
+      const botoneS = (document.getElementById("botones").style.display =
+        "flex");
+      const grillaS = (document.getElementById("grilla").style.display =
+        "none");
+    }
+
+    function ejercicioCompletado() {
+      comenzarAudio();
+      usuario.puntos = parseInt(usuario.puntos) + 10;
+      switch (dolor) {
+        case "dolorcuello1":
+          usuario.cuello1 = parseInt(usuario.cuello1) + 1;
+          break;
+        case "dolorcuello2":
+          usuario.cuello2 = parseInt(usuario.cuello2) + 1;
+          break;
+        case "dolorcuello3":
+          usuario.cuello3 = parseInt(usuario.cuello3) + 1;
+          break;
+        case "dolorhombros1":
+          usuario.hombros1 = parseInt(usuario.hombros1) + 1;
+          break;
+        case "dolorhombros2":
+          usuario.hombros2 = parseInt(usuario.hombros2) + 1;
+          break;
+        case "dolorhombros3":
+          usuario.hombros3 = parseInt(usuario.hombros3) + 1;
+          break;
+        case "dolorhombros4":
+          usuario.hombros4 = parseInt(usuario.hombros4) + 1;
+          break;
+        case "dolorlumbar1":
+          usuario.lumbar1 = parseInt(usuario.lumbar1) + 1;
+          break;
+        case "dolorlumbar2":
+          usuario.lumbar2 = parseInt(usuario.lumbar2) + 1;
+          break;
+        case "dolorrodilla1":
+          usuario.rodilla1 = parseInt(usuario.rodilla1) + 1;
+          break;
+        case "dolorrodilla2":
+          usuario.rodilla2 = parseInt(usuario.rodilla2) + 1;
+          break;
+        case "dolorvisual":
+          usuario.visual = parseInt(usuario.visual) + 1;
+          break;
+
+        default:
+          break;
+      }
+
+      let imagen = (document.getElementById("ejercicioID").src =
+        "../images/ejercicios/default.png");
+      actividad = "";
+      dolor = "";
+      tiempoIntro = 5;
+      console.log(usuario);
+      for (let i = 0; i < info.length; i++) {
+        if (info[i].dni == usuario.dni) {
+          (info[i].puntos = usuario.puntos),
+            (info[i].cuello1 = usuario.cuello1),
+            (info[i].dolorcuello1 = usuario.dolorcuello1),
+            (info[i].cuello2 = usuario.cuello2),
+            (info[i].dolorcuello2 = usuario.dolorcuello2),
+            (info[i].cuello3 = usuario.cuello3),
+            (info[i].dolorcuello3 = usuario.dolorcuello3),
+            (info[i].hombros1 = usuario.hombros1),
+            (info[i].dolorhombros1 = usuario.dolorhombros1),
+            (info[i].hombros2 = usuario.hombros2),
+            (info[i].dolorhombros2 = usuario.dolorhombros2),
+            (info[i].hombros3 = usuario.hombros3),
+            (info[i].dolorhombros3 = usuario.dolorhombros3),
+            (info[i].hombros4 = usuario.hombros4),
+            (info[i].dolorhombros4 = usuario.dolorhombros4),
+            (info[i].lumbar1 = usuario.lumbar1),
+            (info[i].dolorlumbar1 = usuario.dolorlumbar1),
+            (info[i].lumbar2 = usuario.lumbar2),
+            (info[i].dolorlumbar2 = usuario.dolorlumbar2),
+            (info[i].rodilla1 = usuario.rodilla1),
+            (info[i].dolorrodilla1 = usuario.dolorrodilla1),
+            (info[i].rodilla2 = usuario.rodilla2),
+            (info[i].dolorrodilla2 = usuario.dolorrodilla2),
+            (info[i].visual = usuario.visual),
+            (info[i].dolorvisual = usuario.dolorvisual);
+        }
+      }
+      infoEnJSON = JSON.stringify(info);
+
+      localStorage.setItem("usuarios", infoEnJSON);
+
+      const mainS = (document.getElementById("main").style.display = "flex");
+
+      const puntosPlus = (document.getElementById("puntos").innerText =
+        usuario.puntos);
+      const conclusionS = (document.getElementById("conclusion").style.display =
+        "none");
+      pantallaActiva = "main";
+    }
+
+    function download() {
+      const data = JSON.parse(localStorage.getItem("usuarios"));
+
+      let csvContent = "data:text/csv;charset=utf-8,";
+      csvContent += Object.keys(data[0]).join(",") + "\r\n";
+
+      for (let index = 0; index < data.length; index++) {
+        const values = Object.values(data[index]);
+        const row = values.map((value) => `${value}`).join(",");
+        if (index != data.length - 1) {
+          csvContent += row + "\r\n";
+        } else if (index == data.length - 1) {
+          csvContent += row;
+        }
+      }
+
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "datos.csv");
+      document.body.appendChild(link);
+      link.click();
+    }
+
+//--------SONIDOS------------
+
+function sonidoTap(){
+  var tap= new Audio("audio/fxTap.mp3");
+  tap.play();
+}
+
+function sonidoError(){
+  var error= new Audio("audio/beep-warning.mp3");
+  error.play();
+}
+
+function seleccionaMain(){
+  var selecciona= new Audio("audio/meopper/main.mp3");
+  selecciona.play();
+}
+
+function bienvenida(){
+  xaudio= document.querySelector("#saludo").play();
+}
+
+function datos(){
+  var ingresa= new Audio("audio/meopper/ingresaTusDatos.mp3");
+  ingresa.play();
+}
+
+function pausaActiva(){
+  var pausa= new Audio("audio/meopper/pausasActivas.mp3");
+  pausa.play();
+}
+
+function lolograste(){
+  var lolograste= new Audio("audio/meopper/lolograste.mp3")
+}
+
+function comenzarAudio(){
+  var pausa= new Audio("audio/fxComenzar.mp3");
+  pausa.play();
+}
+
+
+
+// When the user clicks on the button, open the modal
+function mostrarModal() {
+var modal = document.getElementById("myModal");
+  modal.style.display = "flex";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    var modal = document.getElementById("myModal");
+    var adentro= document.querySelector(".adentro");
+  if (event.target == modal || event.target == adentro) {
+    modal.style.display = "none";
+    bienvenida();
+    document.getElementById('ambient').play();
+    
+  }
+}
+
+
+  </script>
+</html>
