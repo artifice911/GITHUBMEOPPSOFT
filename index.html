@@ -251,7 +251,7 @@
         <button
           class="button-34"
           role="button"
-          onclick="volverLogin()"
+          onclick="location.reload()"
           id="volver"
         >
           Cerrar Sesion
@@ -552,6 +552,7 @@
         
       </div>
     </section>
+    <audio src="" id="audioLocutor"></audio>
     <audio src="audio/ambientTecno.mp3" loop id="ambient"></audio>
      <video
       autoplay
@@ -570,7 +571,7 @@
     //CONOCER LA PANTALLA ACTIVA PARA RESETEAR EL SOFT SI NO HAY ACTIVIDAD DESPUES DE 4 MINUTOS
     let pantallaActiva = "intro";
 
-    var timeoutInMiliseconds = 240000;
+    var timeoutInMiliseconds = 10000;
     var timeoutId;
 
     function startTimer() {
