@@ -187,6 +187,7 @@
       class="flex-column align-content-center text-center"
     >
       VIDEO PRECALENTAMIENTO
+      <img src="images/precalentamiento.png" alt="precalentamientoimg" class="img-fluid p-5">
       <button
         class="button-34 align-self-center mt-3"
         role="button"
@@ -479,7 +480,7 @@
 
     <!----------SECCION ACTIVIDAD------------------->
     <section id="actividad" class="flex-column justify-content-center">
-      <div class="d-flex">
+      <div class="d-flex m-5">
         <div class="d-flex flex-column align-items-center w-25">
           <h1 id="tiempoAct" class="timerGrande"></h1>
           <h1
@@ -507,7 +508,7 @@
         id="grilla"
         class="w-100 flex-column justify-content-center align-items-center"
       >
-        <h1 id="pregunta" class="text-center mt-5">
+        <h1 id="pregunta" class="text-center mt-5 bg-white rounded p-3">
           ¿Sentiste dolor o molestia durante este ejercicio?
         </h1>
         <div class="d-flex justify-content-center">
@@ -1492,6 +1493,7 @@
         "calentamiento"
       ).style.display = "flex");
       pantallaActiva = "precalentamiento";
+      precalentamientoShort();
     }
 
     function mostrarMain() {
@@ -1766,50 +1768,62 @@
         case "cuello1":
           titulo = document.getElementById("nombreEjercicio").innerHTML =
             actividad;
+            cuello1Sound();
           break;
         case "cuello2":
           titulo = document.getElementById("nombreEjercicio").innerHTML =
             actividad;
+            cuello2Sound();
           break;
         case "cuello3":
           titulo = document.getElementById("nombreEjercicio").innerHTML =
             actividad;
+            cuello3Sound();
           break;
         case "hombros1":
           titulo = document.getElementById("nombreEjercicio").innerHTML =
             actividad;
+            hombros1Sound();
           break;
         case "hombros2":
           titulo = document.getElementById("nombreEjercicio").innerHTML =
             actividad;
+            hombros2Sound();
           break;
         case "hombros3":
           titulo = document.getElementById("nombreEjercicio").innerHTML =
             actividad;
+            hombros3Sound();
           break;
         case "hombros4":
           titulo = document.getElementById("nombreEjercicio").innerHTML =
             actividad;
+            hombros4Sound();
           break;
         case "lumbar1":
           titulo = document.getElementById("nombreEjercicio").innerHTML =
             actividad;
+            lumbar1Sound();
           break;
         case "lumbar2":
           titulo = document.getElementById("nombreEjercicio").innerHTML =
             actividad;
+            lumbar2Sound();
           break;
         case "rodilla1":
           titulo = document.getElementById("nombreEjercicio").innerHTML =
             actividad;
+            rodilla1Sound();
           break;
         case "rodilla2":
           titulo = document.getElementById("nombreEjercicio").innerHTML =
             actividad;
+            rodilla2Sound();
           break;
         case "visual":
           titulo = document.getElementById("nombreEjercicio").innerHTML =
             actividad;
+            visualSound();
           break;
         case "":
           alert("ELIGE UNA ACTIVIDAD PARA COMENZAR");
@@ -1820,7 +1834,7 @@
 
       const ejercicioActual = (document.getElementById("ejercicioActual").src =
         srcActual);
-      let temporizador = new TiempoEjercicio("tiempoAct", 3, -1);
+      let temporizador = new TiempoEjercicio("tiempoAct", 15, -1);
       temporizador.conteoSegundos();
     }
 
@@ -2044,6 +2058,12 @@ function bienvenida(){
   
 }
 
+function precalentamientoShort(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/meopper/precalentamientoShort.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+  
+}
+
 function datos(){
   const audioLocutor= document.getElementById("audioLocutor").src="audio/meopper/ingresaTusDatos.mp3";
   const audio = document.getElementById("audioLocutor").play();
@@ -2065,7 +2085,65 @@ function comenzarAudio(){
   pausa.play();
 }
 
+function cuello1Sound(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/ejercicios/cuello1.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+}
 
+function cuello2Sound(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/ejercicios/cuello2.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+}
+
+function cuello3Sound(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/ejercicios/cuello3.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+}
+
+function hombros1Sound(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/ejercicios/hombros1.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+}
+
+function hombros2Sound(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/ejercicios/hombros2.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+}
+
+function hombros3Sound(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/ejercicios/hombros3.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+}
+
+function hombros4Sound(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/ejercicios/hombros4.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+}
+
+function lumbar1Sound(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/ejercicios/lumbar1.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+}
+
+function lumbar2Sound(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/ejercicios/lumbar2.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+}
+
+function rodilla1Sound(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/ejercicios/rodilla1.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+}
+
+function rodilla2Sound(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/ejercicios/rodilla2.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+}
+
+function visualSound(){
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/ejercicios/visual.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+}
 
 // When the user clicks on the button, open the modal
 function mostrarModal() {
