@@ -28,7 +28,7 @@
           Entrar
         </button>
       </div>
-      <audio src="audio/meopper/bienvenida.mp3" id="saludo"></audio>
+      <!-- <audio src="audio/meopper/bienvenida.mp3" id="saludo"></audio> -->
     </section>
 
     <!----------SECCION LOGIN USUARIO--->
@@ -165,9 +165,12 @@
     <!----------SECCION PAUSAS ACTIVAS VIDEO--->
     <section
       id="pausasActivas"
-      class="flex-column align-content-center text-center"
+      class="flex-column align-content-center text-center h-100"
     >
       PAUSAS ACTIVAS VIDEO
+      <div class="w-100 h-50">
+        <img src="images/characters.png" alt="personajes" class="imgpausas">
+      </div>
       <button
         class="button-34 align-self-center mt-3"
         role="button"
@@ -571,7 +574,7 @@
     //CONOCER LA PANTALLA ACTIVA PARA RESETEAR EL SOFT SI NO HAY ACTIVIDAD DESPUES DE 4 MINUTOS
     let pantallaActiva = "intro";
 
-    var timeoutInMiliseconds = 10000;
+    var timeoutInMiliseconds = 240000;
     var timeoutId;
 
     function startTimer() {
@@ -2031,26 +2034,30 @@ function sonidoError(){
 }
 
 function seleccionaMain(){
-  var selecciona= new Audio("audio/meopper/main.mp3");
-  selecciona.play();
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/meopper/main.mp3";
+  const audio = document.getElementById("audioLocutor").play();
 }
 
 function bienvenida(){
-  xaudio= document.querySelector("#saludo").play();
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/meopper/bienvenida.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+  
 }
 
 function datos(){
-  var ingresa= new Audio("audio/meopper/ingresaTusDatos.mp3");
-  ingresa.play();
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/meopper/ingresaTusDatos.mp3";
+  const audio = document.getElementById("audioLocutor").play();
+  
 }
 
 function pausaActiva(){
-  var pausa= new Audio("audio/meopper/pausasActivas.mp3");
-  pausa.play();
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/meopper/pausasActivas.mp3";
+  const audio = document.getElementById("audioLocutor").play();
 }
 
 function lolograste(){
-  var lolograste= new Audio("audio/meopper/lolograste.mp3")
+  const audioLocutor= document.getElementById("audioLocutor").src="audio/meopper/loLograste.mp3";
+  const audio = document.getElementById("audioLocutor").play();
 }
 
 function comenzarAudio(){
